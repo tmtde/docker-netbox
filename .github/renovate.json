@@ -5,11 +5,13 @@
     {
       "matchDatasources": ["docker"],
       "matchPackageNames": ["netboxcommunity/netbox"],
+      "versioning": "loose",
       "allowedVersions": "<4.3.0"
     },
     {
       "matchDatasources": ["docker"],
       "matchPackageNames": ["netboxcommunity/netbox"],
+      "versioning": "loose",
       "allowedVersions": ">=4.3.0",
       "enabled": false,
       "addLabels": ["netbox", "version-blocked"],
