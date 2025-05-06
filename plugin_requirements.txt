@@ -3,3 +3,4 @@ git+https://github.com/netbox-community/netbox-reorder-rack.git@v1.1.3
 git+https://github.com/NetTech2001/netbox-interface-synchronization.git@4.1.6
 git+https://github.com/netbox-community/netbox-topology-views@v4.2.0
 git+https://github.com/Kani999/netbox-attachments.git@7.1.0
+git+https://github.com/ArnesSI/netbox-inventory.git@v2.2.1
