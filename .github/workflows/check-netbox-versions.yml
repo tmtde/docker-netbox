@@ -13,8 +13,6 @@ jobs:
         uses: actions/github-script@v7
         with:
           script: |
-            const fetch = require("node-fetch");
-
             const MIN_BLOCKED_VERSION = "4.3.0";
             const REPO = "netboxcommunity/netbox";
             const issueLabel = "netbox-version-blocked";
