@@ -1,4 +1,19 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["config:recommended"]
+  "extends": ["config:recommended"],
+  "packageRules": [
+    {
+      "matchDatasources": ["docker"],
+      "matchPackageNames": ["netboxcommunity/netbox"],
+      "allowedVersions": "<v4.3.0"
+    },
+    {
+      "matchDatasources": ["docker"],
+      "matchPackageNames": ["netboxcommunity/netbox"],
+      "allowedVersions": ">=v4.3.0",
+      "enabled": false,
+      "addLabels": ["netbox", "version-blocked"],
+      "description": "Netbox-versions >=4.3.0 blocked. Please check!"
+    }
+  ]
 }
