@@ -9,7 +9,7 @@ RUN apt-get -q update; apt-get -qy upgrade && rm -rf /var/lib/apt/lists/* && \
   # Define required plugins
   echo 'netbox-qrcode\nnetbox-interface-synchronization\nnetbox-reorder-rack\n' >> /opt/netbox/plugin_requirements.txt && \
   # Install plugins
-  /opt/netbox/venv/bin/pip install  --no-warn-script-location -r /opt/netbox/plugin_requirements.txt && \
+  /usr/local/bin/uv pip install -r /opt/netbox/plugin_requirements.txt && \
   # Install static files from our plugins
   SECRET_KEY="dummydummydummydummydummydummydummydummydummydummy" /opt/netbox/venv/bin/python /opt/netbox/netbox/manage.py collectstatic --no-input && \
   # Activate plugins
