@@ -17,6 +17,7 @@
     {
       "matchDatasources": ["docker"],
       "matchPackageNames": ["netboxcommunity/netbox"],
+      "versioning": "semver",
       "allowedVersions": "<4.3.0"
     }
   ]
