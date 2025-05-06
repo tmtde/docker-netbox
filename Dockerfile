@@ -20,7 +20,7 @@ RUN apt-get -q update; apt-get -qy upgrade && \
   SECRET_KEY="dummydummydummydummydummydummydummydummydummydummy" /opt/netbox/venv/bin/python /opt/netbox/netbox/manage.py collectstatic --no-input && \
   # Activate plugins
   cat /etc/netbox/config/plugins.py && \
-  echo 'PLUGINS = ["netbox_qrcode","netbox_interface_synchronization","netbox_reorder_rack","netbox_topology_views"]' >> /etc/netbox/config/plugins.py && \
+  echo 'PLUGINS = ["netbox_qrcode","netbox_interface_synchronization","netbox_reorder_rack","netbox_topology_views","netbox_attachments"]' >> /etc/netbox/config/plugins.py && \
   # Cleanup
   apt-get purge \
       --yes -qq \
