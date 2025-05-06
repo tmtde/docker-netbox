@@ -1,9 +1,15 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["config:recommended"],
-  "regexManagers": [
+  "extends": [
+    "config:recommended"
+  ],
+  "customManagers": [
     {
-      "fileMatch": ["^docker-compose\\.ya?ml$", "^Dockerfile$"],
+      "customType": "regex",
+      "fileMatch": [
+        "^docker-compose\\.ya?ml$",
+        "^Dockerfile$"
+      ],
       "matchStrings": [
         "image:\\s*netboxcommunity/netbox:v(?<currentValue>\\d+\\.\\d+\\.\\d+)",
         "FROM\\s+netboxcommunity/netbox:v(?<currentValue>\\d+\\.\\d+\\.\\d+)"
@@ -15,8 +21,12 @@
   ],
   "packageRules": [
     {
-      "matchDatasources": ["docker"],
-      "matchPackageNames": ["netboxcommunity/netbox"],
+      "matchDatasources": [
+        "docker"
+      ],
+      "matchPackageNames": [
+        "netboxcommunity/netbox"
+      ],
       "versioning": "semver",
       "allowedVersions": "<4.3.0"
     }
