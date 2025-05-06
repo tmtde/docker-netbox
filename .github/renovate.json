@@ -1,21 +1,23 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": ["config:recommended"],
+  "regexManagers": [
+    {
+      "fileMatch": ["^docker-compose\\.ya?ml$", "^Dockerfile$"],
+      "matchStrings": [
+        "image:\\s*netboxcommunity/netbox:v(?<currentValue>\\d+\\.\\d+\\.\\d+)",
+        "FROM\\s+netboxcommunity/netbox:v(?<currentValue>\\d+\\.\\d+\\.\\d+)"
+      ],
+      "datasourceTemplate": "docker",
+      "packageNameTemplate": "netboxcommunity/netbox",
+      "versioningTemplate": "semver"
+    }
+  ],
   "packageRules": [
     {
       "matchDatasources": ["docker"],
       "matchPackageNames": ["netboxcommunity/netbox"],
-      "versioning": "regex:^v(?<major>\\d+)\\.(?<minor>\\d+)\\.(?<patch>\\d+)-\\d+\\.\\d+\\.\\d+$",
       "allowedVersions": "<4.3.0"
-    },
-    {
-      "matchDatasources": ["docker"],
-      "matchPackageNames": ["netboxcommunity/netbox"],
-      "versioning": "regex:^v(?<major>\\d+)\\.(?<minor>\\d+)\\.(?<patch>\\d+)-\\d+\\.\\d+\\.\\d+$",
-      "allowedVersions": ">=4.3.0",
-      "enabled": false,
-      "addLabels": ["netbox", "version-blocked"],
-      "description": "Netbox-versions >=4.3.0 blocked. Please check!"
     }
   ]
 }
