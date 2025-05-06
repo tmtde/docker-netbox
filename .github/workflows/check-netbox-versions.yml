@@ -1,0 +1,89 @@
+name: Check Netbox Docker Tags
+
+on:
+  schedule:
+    - cron: "0 6 * * *"  # Runs daily at 06:00 UTC
+  workflow_dispatch:     # Allows manual trigger
+
+jobs:
+  check-netbox:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check Netbox tags and create issue
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fetch = require("node-fetch");
+
+            const MIN_BLOCKED_VERSION = "4.3.0";
+            const REPO = "netboxcommunity/netbox";
+            const issueLabel = "netbox-version-blocked";
+
+            function compareVersions(a, b) {
+              const [ma, mi, pa] = a.split('.').map(Number);
+              const [mb, mi2, pb] = b.split('.').map(Number);
+              if (ma !== mb) return ma - mb;
+              if (mi !== mi2) return mi - mi2;
+              return pa - pb;
+            }
+
+            // Get docker tags from Docker Hub
+            const res = await fetch(`https://hub.docker.com/v2/repositories/${REPO}/tags?page_size=100`);
+            const data = await res.json();
+            const tags = data.results
+              .map(t => t.name)
+              .filter(name => /^v\d+\.\d+\.\d+$/.test(name))
+              .map(name => name.slice(1)); // remove leading "v"
+
+            const blocked = tags.filter(tag => compareVersions(tag, MIN_BLOCKED_VERSION) >= 0);
+
+            if (blocked.length === 0) {
+              console.log("No blocked versions found.");
+              return;
+            }
+
+            const { repo, owner } = context.repo;
+            const title = `🚫 Blocked Netbox version(s) detected: ${blocked.join(', ')}`;
+            const body = [
+              `The following Netbox Docker image tags have been found and are blocked (>= ${MIN_BLOCKED_VERSION}):`,
+              ``,
+              ...blocked.map(tag => `- \`v${tag}\``),
+              ``,
+              `Please review whether this block should be lifted or if manual updates are required.`,
+            ].join('\n');
+
+            // Check if an issue already exists
+            const existingIssues = await github.rest.issues.listForRepo({
+              owner,
+              repo,
+              state: "open",
+              labels: issueLabel
+            });
+
+            const alreadyExists = existingIssues.data.some(issue => issue.title === title);
+            if (alreadyExists) {
+              console.log("Blocked version issue already exists. Skipping creation.");
+              return;
+            }
+
+            // Create label if missing
+            try {
+              await github.rest.issues.getLabel({ owner, repo, name: issueLabel });
+            } catch {
+              await github.rest.issues.createLabel({
+                owner,
+                repo,
+                name: issueLabel,
+                color: "d73a4a",
+                description: "Blocked Docker versions of Netbox"
+              });
+            }
+
+            // Create the issue
+            await github.rest.issues.create({
+              owner,
+              repo,
+              title,
+              body,
+              labels: [issueLabel]
+            });
