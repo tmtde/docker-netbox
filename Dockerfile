@@ -2,7 +2,7 @@
 # checkov:skip=CKV_DOCKER_3: we don't want to drift away from upstream. so we keep it as it is
 # checkov:skip=CKV_DOCKER_7: yes, latest is okay here
 # hadolint ignore=DL3007
-FROM netboxcommunity/netbox:latest
+FROM netboxcommunity/netbox:v4.2.8
 
 # Update base image
 RUN apt-get -q update; apt-get -qy upgrade && rm -rf /var/lib/apt/lists/* && \
