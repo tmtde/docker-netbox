@@ -15,6 +15,7 @@
     }
   ],
   "packageRules": [
+    { "matchFileNames": [".github/workflows/**"], "pinDigests": false },
     {
       "matchDatasources": ["docker"],
       "matchPackageNames": ["netboxcommunity/netbox"],
