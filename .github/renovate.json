@@ -4,7 +4,7 @@
   "customManagers": [
     {
       "customType": "regex",
-      "fileMatch": ["^docker-compose\\.ya?ml$", "^Dockerfile$"],
+      "managerFilePatterns": ["/^docker-compose\\.ya?ml$/", "/^Dockerfile$/"],
       "matchStrings": [
         "image:\\s*netboxcommunity/netbox:v(?<currentValue>\\d+\\.\\d+\\.\\d+)",
         "FROM\\s+netboxcommunity/netbox:v(?<currentValue>\\d+\\.\\d+\\.\\d+)"
@@ -15,7 +15,10 @@
     }
   ],
   "packageRules": [
-    { "matchFileNames": [".github/workflows/**"], "pinDigests": false },
+    {
+      "matchFileNames": [".github/workflows/**"],
+      "pinDigests": false
+    },
     {
       "matchDatasources": ["docker"],
       "matchPackageNames": ["netboxcommunity/netbox"],
