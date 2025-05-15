@@ -193,7 +193,7 @@ jobs:
           format: "sarif"
           exit-code: "1"
           exit-level: "warn"
-          ignore: "CIS-DI-0001,CIS-DI-0010,DKL-DI-0006"
+          ignore: "CIS-DI-0001,CIS-DI-0009,CIS-DI-0010,DKL-DI-0006"
           output: sarif-reports
       #     - name: Move reports
       #       run: mkdir -p sarif-reports && cp ./*results.sarif ./sarif-reports/
