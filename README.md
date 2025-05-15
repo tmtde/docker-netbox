@@ -12,7 +12,7 @@ The following plugins have been added to this custom NetBox image:
 2. **[Netbox QR Code](https://github.com/netbox-community/netbox-qrcode)**
    A plugin for generate QR codes for objects: Rack, Device, Cable.
 
-3. **[Netbox Reorder Rack Plugin](https://github.com/minitriga/netbox-reorder-rack/)**
+3. **[Netbox Reorder Rack Plugin](https://github.com/netbox-community/netbox-reorder-rack)**
    Allow the ability to reorder rack units in NetBox using a drag and drop interface.
 
 4. **[Netbox Interface Synchronization](https://github.com/NetTech2001/netbox-interface-synchronization)**
