@@ -21,3 +21,6 @@ updates:
     pull-request-branch-name:
       separator: "-"
     open-pull-requests-limit: 10
+    ignore:
+      - dependency-name: "netboxcommunity/netbox"
+        versions: [">=4.3.0"]
