@@ -5,7 +5,7 @@ netbox-interface-synchronization==4.1.7
 netbox-topology-views==4.2.1
 netbox-attachments==8.0.4
 netbox-inventory==2.3.1
-netbox-floorplan-plugin==0.6.0
+netbox-floorplan-plugin==0.7.0
 netbox-contract==2.4.0
 netbox-documents==0.7.2
 netbox-lifecycle==1.1.5
