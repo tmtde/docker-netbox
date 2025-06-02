@@ -7,7 +7,7 @@ netbox-attachments==8.0.4
 netbox-inventory==2.3.1
 netbox-floorplan-plugin==0.7.0
 netbox-contract==2.4.0
-netbox-documents==0.7.2
+netbox-documents==0.7.3
 netbox-lifecycle==1.1.6
 netbox-otp-plugin==1.3.2
 nb-service==4.2.0
