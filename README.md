@@ -22,13 +22,13 @@ The following plugins have been added to this custom NetBox image:
    Netbox plugin providing floorplan mapping capability for locations and sites
 
 6. **[Netbox Documents Plugin](https://github.com/jasonyates/netbox-documents)**
-    Netbox plugin designed to facilitate the storage of site, circuit, device type and device specific documents
+   Netbox plugin designed to facilitate the storage of site, circuit, device type and device specific documents
 
 7. **[NetBox Lifecycle Plugin](https://github.com/dansheps/netbox-lifecycle)**
-    Netbox plugin for managing Hardware EOL/EOS, and Support Contracts
+   Netbox plugin for managing Hardware EOL/EOS, and Support Contracts
 
 8. **[Netbox OTP Plugin](https://github.com/k1nky/netbox-otp-plugin)**
-    Netbox plugin adds support for one-time password (OTP)
+   Netbox plugin adds support for one-time password (OTP)
 
 ### Plugin Requirements
 
