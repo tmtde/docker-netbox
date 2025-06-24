@@ -1,6 +1,5 @@
 django-auth-ldap==5.2.0
 netbox-qrcode==0.0.18
-netbox-interface-synchronization==4.1.7
 netbox-topology-views==4.3.0
 netbox-attachments==8.0.4
 netbox-inventory==2.4.0
