@@ -15,28 +15,25 @@ The following plugins have been added to this custom NetBox image:
 3. **[NetBox Topology Views](https://github.com/netbox-community/netbox-topology-views)**  
    Provides a graphical representation of network topology within NetBox.
 
-4. **[NetBox Attachments Plugin](https://github.com/Kani999/netbox-attachments)**
-   Plugin to manage attachments for any model
-
-5. **[NetBox Inventory Plugin](https://github.com/ArnesSI/netbox-inventory/)**
+4. **[NetBox Inventory Plugin](https://github.com/ArnesSI/netbox-inventory/)**
    Netbox plugin for hardware inventory.
 
-6. **[NetBox Floorplan Plugin](https://github.com/netbox-community/netbox-floorplan-plugin.git)**
+5. **[NetBox Floorplan Plugin](https://github.com/netbox-community/netbox-floorplan-plugin.git)**
    Netbox plugin providing floorplan mapping capability for locations and sites
 
-7. **[Netbox Contract Plugin](https://github.com/mlebreuil/netbox-contract)**
+6. **[Netbox Contract Plugin](https://github.com/mlebreuil/netbox-contract)**
    NetBox plugin to manage contracts
 
-8. **[Netbox Documents Plugin](https://github.com/jasonyates/netbox-documents)**
+7. **[Netbox Documents Plugin](https://github.com/jasonyates/netbox-documents)**
     Netbox plugin designed to facilitate the storage of site, circuit, device type and device specific documents
 
-9. **[NetBox Lifecycle Plugin](https://github.com/dansheps/netbox-lifecycle)**
+8. **[NetBox Lifecycle Plugin](https://github.com/dansheps/netbox-lifecycle)**
     Netbox plugin for managing Hardware EOL/EOS, and Support Contracts
 
-10. **[Netbox OTP Plugin](https://github.com/k1nky/netbox-otp-plugin)**
+9. **[Netbox OTP Plugin](https://github.com/k1nky/netbox-otp-plugin)**
     Netbox plugin adds support for one-time password (OTP)
 
-11. **[Netbox Nbservice](https://github.com/renatoalmeidaoliveira/nbservice)**
+10. **[Netbox Nbservice](https://github.com/renatoalmeidaoliveira/nbservice)**
     Netbox Plugin for ITSM service mapping
 
 ### Plugin Requirements
