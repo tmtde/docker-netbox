@@ -27,9 +27,6 @@ The following plugins have been added to this custom NetBox image:
 7. **[NetBox Lifecycle Plugin](https://github.com/dansheps/netbox-lifecycle)**
    Netbox plugin for managing Hardware EOL/EOS, and Support Contracts
 
-8. **[Netbox OTP Plugin](https://github.com/k1nky/netbox-otp-plugin)**
-   Netbox plugin adds support for one-time password (OTP)
-
 ### Plugin Requirements
 
 These plugins are based on the contents of the [plugin_requirements.txt](https://github.com/tmtde/docker-netbox/blob/development/plugin_requirements.txt) file. This file lists all the required dependencies and plugins for the NetBox instance running with this Docker image.
