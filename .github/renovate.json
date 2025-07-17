@@ -24,6 +24,23 @@
       "matchPackageNames": ["netboxcommunity/netbox"],
       "versioning": "semver",
       "allowedVersions": "<4.4.0"
+    },
+    {
+      "description": "Automerge non-major updates",
+      "matchManagers": ["dockerfile"],
+      "matchUpdateTypes": ["patch", "digest"],
+      "automerge": true,
+      "automergeType": "pr",
+      "requiredStatusChecks": [
+        "codespell",
+        "super-linter",
+        "shiftleft",
+        "test-build",
+        "Run test",
+        "Run Dockle tests",
+        "Run Trivy tests",
+        "Run Anchore tests"
+      ]
     }
   ]
 }
