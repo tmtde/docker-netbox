@@ -1,10 +1,16 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["config:recommended", "docker:pinDigests"],
+  "extends": [
+    "config:recommended",
+    "docker:pinDigests"
+  ],
   "customManagers": [
     {
       "customType": "regex",
-      "managerFilePatterns": ["/^docker-compose\\.ya?ml$/", "/^Dockerfile$/"],
+      "managerFilePatterns": [
+        "/^docker-compose\\.ya?ml$/",
+        "/^Dockerfile$/"
+      ],
       "matchStrings": [
         "image:\\s*netboxcommunity/netbox:v(?<currentValue>\\d+\\.\\d+\\.\\d+)",
         "FROM\\s+netboxcommunity/netbox:v(?<currentValue>\\d+\\.\\d+\\.\\d+)"
@@ -16,43 +22,61 @@
   ],
   "packageRules": [
     {
-      "matchFileNames": [".github/workflows/**"],
+      "matchFileNames": [
+        ".github/workflows/**"
+      ],
       "pinDigests": false
     },
     {
-      "matchDatasources": ["docker"],
-      "matchPackageNames": ["netboxcommunity/netbox"],
+      "matchDatasources": [
+        "docker"
+      ],
+      "matchPackageNames": [
+        "netboxcommunity/netbox"
+      ],
       "versioning": "semver",
       "allowedVersions": "<4.4.0"
     },
     {
       "description": "Automerge patch level updates",
-      "matchManagers": ["dockerfile"],
-      "matchUpdateTypes": ["patch"],
+      "matchManagers": [
+        "dockerfile"
+      ],
+      "matchUpdateTypes": [
+        "patch"
+      ],
       "matchCurrentVersion": "!/^0/",
       "automerge": true,
       "automergeType": "pr"
     },
     {
       "description": "Automerge digest updates",
-      "matchManagers": ["dockerfile"],
-      "matchUpdateTypes": ["digest"],
+      "matchManagers": [
+        "dockerfile"
+      ],
+      "matchUpdateTypes": [
+        "digest"
+      ],
       "automerge": true,
       "automergeType": "pr"
     },
     {
       "description": "Automerge some GitHub Actions (Lint/Prettier/Scanner)",
-      "matchFileNames": [".github/workflows/**"],
-      "matchPackagePatterns": [
-        ".*codespell.*",
-        ".*lint.*",
-        ".*dockle.*",
-        ".*trivy.*",
-        ".*anchore.*"
+      "matchFileNames": [
+        ".github/workflows/**"
       ],
-      "matchManagers": ["github-actions"],
+      "matchManagers": [
+        "github-actions"
+      ],
       "automerge": true,
-      "automergeType": "pr"
+      "automergeType": "pr",
+      "matchPackageNames": [
+        "/.*codespell.*/",
+        "/.*lint.*/",
+        "/.*dockle.*/",
+        "/.*trivy.*/",
+        "/.*anchore.*/"
+      ]
     }
   ]
 }
