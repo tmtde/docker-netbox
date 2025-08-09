@@ -160,6 +160,11 @@ jobs:
       - name: Download netbox-docker test scripts
         run: |
           git clone https://github.com/netbox-community/netbox-docker.git /tmp/netbox-docker
+      - name: Test the Docker image for static files
+        run: |
+          CONTAINER_OUTPUT="$(docker run --rm -t localhost:5000/foobar/${{ env.IMAGE_NAME }} ls -1 /opt/netbox/netbox/static/netbox_floorplan/ | wc -l)"
+          echo "${CONTAINER_OUTPUT}"
+          if ! [ "${CONTAINER_OUTPUT}" -gt 0 ]; then exit 1; fi
       - name: Test the Docker image
         id: test-image
         run: cd /tmp/netbox-docker && IMAGE="localhost:5000/foobar/${{ env.IMAGE_NAME }}" ./test.sh

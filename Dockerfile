@@ -18,11 +18,11 @@ RUN apt-get -q update; apt-get -qy upgrade && \
   rm -rf /var/lib/apt/lists/* /var/cache/apt/archives/* && \
   # Install plugins
   /usr/local/bin/uv pip install -r /opt/netbox/plugin_requirements.txt && \
-  # Install static files from our plugins
-  SECRET_KEY="dummydummydummydummydummydummydummydummydummydummy" /opt/netbox/venv/bin/python /opt/netbox/netbox/manage.py collectstatic --no-input && \
   # Activate plugins
   cat /etc/netbox/config/plugins.py && \
   echo 'PLUGINS = ["netbox_qrcode","netbox_topology_views","netbox_inventory","netbox_floorplan","netbox_documents","netbox_lifecycle","netbox_otp_plugin"]' >> /etc/netbox/config/plugins.py && \
+  # Install static files from our plugins
+  DEBUG="true" SECRET_KEY="dummyKeyWithMinimumLength-------------------------" /opt/netbox/venv/bin/python /opt/netbox/netbox/manage.py collectstatic --no-input && \
   # Cleanup
   apt-get purge \
       --yes -qq \
