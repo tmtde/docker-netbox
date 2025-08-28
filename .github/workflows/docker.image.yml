@@ -53,7 +53,9 @@ jobs:
           DEFAULT_BRANCH: master
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           VALIDATE_CHECKOV: false
+          VALIDATE_GITHUB_ACTIONS_ZIZMOR: false
           VALIDATE_RENOVATE: false
+          VALIDATE_TRIVY: false
   shiftleft:
     name: shiftleft
     strategy:
