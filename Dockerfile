@@ -4,7 +4,7 @@
 # checkov:skip=CKV_DOCKER_3: we don't want to drift away from upstream. so we keep it as it is
 # checkov:skip=CKV_DOCKER_7: yes, latest is okay here
 # hadolint ignore=DL3007
-FROM netboxcommunity/netbox:v4.3.7@sha256:4545abd95eb92aea0d8895658fc37b958d9647bc064c4c88475741ae5daada4f
+FROM netboxcommunity/netbox:v4.3.7@sha256:d53b7072b4f96aee3c66be8f12f339e8284dc25f115bb5bc7208a2e52d6aaa1f
 
 COPY ./plugin_requirements.txt /opt/netbox/
 
