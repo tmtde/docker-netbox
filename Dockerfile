@@ -21,6 +21,7 @@ RUN apt-get -q update; apt-get -qy upgrade && \
   # Activate plugins
   cat /etc/netbox/config/plugins.py && \
   echo 'PLUGINS = ["netbox_qrcode","netbox_topology_views","netbox_inventory","netbox_floorplan","netbox_documents","netbox_lifecycle","netbox_otp_plugin","netbox_librenms_plugin"]' >> /etc/netbox/config/plugins.py && \
+  echo 'PLUGINS_CONFIG = {"netbox_librenms_plugin":{"servers":{"bogus":{"display_name":"Bogus Server","librenms_url":"https://bogus.example.com","api_token":"your_production_token","cache_timeout":300,"verify_ssl": True,"interface_name_field":"ifDescr"}}}}' >> /etc/netbox/config/plugins.py && \
   # Install static files from our plugins
   DEBUG="true" SECRET_KEY="dummyKeyWithMinimumLength-------------------------" /opt/netbox/venv/bin/python /opt/netbox/netbox/manage.py collectstatic --no-input && \
   # Cleanup
