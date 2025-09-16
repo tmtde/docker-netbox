@@ -12,22 +12,25 @@ The following plugins have been added to this custom NetBox image:
 2. **[Netbox QR Code](https://github.com/netbox-community/netbox-qrcode)**
    A plugin for generate QR codes for objects: Rack, Device, Cable.
 
-3. **[NetBox Topology Views](https://github.com/netbox-community/netbox-topology-views)**  
+3. **[Netbox Interface Synchronization](https://github.com/NetTech2001/netbox-interface-synchronization)**
+   Compare and synchronize interfaces between devices and device types
+
+4. **[NetBox Topology Views](https://github.com/netbox-community/netbox-topology-views)**  
    Provides a graphical representation of network topology within NetBox.
 
-4. **[NetBox Inventory Plugin](https://github.com/ArnesSI/netbox-inventory/)**
+5. **[NetBox Inventory Plugin](https://github.com/ArnesSI/netbox-inventory/)**
    Netbox plugin for hardware inventory.
 
-5. **[NetBox Floorplan Plugin](https://github.com/netbox-community/netbox-floorplan-plugin.git)**
+6. **[NetBox Floorplan Plugin](https://github.com/netbox-community/netbox-floorplan-plugin.git)**
    Netbox plugin providing floorplan mapping capability for locations and sites
 
-6. **[Netbox Documents Plugin](https://github.com/jasonyates/netbox-documents)**
+7. **[Netbox Documents Plugin](https://github.com/jasonyates/netbox-documents)**
    Netbox plugin designed to facilitate the storage of site, circuit, device type and device specific documents
 
-7. **[NetBox Lifecycle Plugin](https://github.com/dansheps/netbox-lifecycle)**
+8. **[NetBox Lifecycle Plugin](https://github.com/dansheps/netbox-lifecycle)**
    Netbox plugin for managing Hardware EOL/EOS, and Support Contracts
 
-8. **[Netbox OTP Plugin](https://github.com/k1nky/netbox-otp-plugin)**
+9. **[Netbox OTP Plugin](https://github.com/k1nky/netbox-otp-plugin)**
    Netbox plugin adds support for one-time password (OTP)
 
 ### Plugin Requirements
