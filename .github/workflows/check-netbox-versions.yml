@@ -34,6 +34,9 @@ jobs:
               .map(name => name.slice(1)); // remove leading "v"
 
             const blocked = tags.filter(tag => compareVersions(tag, MIN_BLOCKED_VERSION) >= 0);
+            const highestTag = tags.filter(tag => compareVersions(tag, MIN_BLOCKED_VERSION) >= 0)
+              .sort((a, b) => compareVersions(b, a))
+              .shift();
 
             if (blocked.length === 0) {
               console.log("No blocked versions found.");
@@ -48,6 +51,8 @@ jobs:
               ...blocked.map(tag => `- \`v${tag}\``),
               ``,
               `Please review whether this block should be lifted or if manual updates are required.`,
+              ``,
+              `You can check the digest for tag v${highestTag} by running the following command: \`curl -s https://hub.docker.com/v2/repositories/${REPO}/tags/v${highestTag}/ | jq -r .images[0].digest\``,
             ].join('\n');
 
             // Check if an issue already exists
