@@ -34,9 +34,7 @@ jobs:
               .map(name => name.slice(1)); // remove leading "v"
 
             const blocked = tags.filter(tag => compareVersions(tag, MIN_BLOCKED_VERSION) >= 0);
-            const highestTag = tags.filter(tag => compareVersions(tag, MIN_BLOCKED_VERSION) >= 0)
-              .sort((a, b) => compareVersions(b, a))
-              .shift();
+            const highestTag = [...blocked].sort((a, b) => compareVersions(b, a)).shift();
 
             if (blocked.length === 0) {
               console.log("No blocked versions found.");
