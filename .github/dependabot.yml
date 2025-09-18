@@ -22,4 +22,4 @@ updates:
     open-pull-requests-limit: 10
     ignore:
       - dependency-name: "netboxcommunity/netbox"
-        versions: [">=4.4.0"]
+        versions: [">=4.5.0"]
