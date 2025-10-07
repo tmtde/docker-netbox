@@ -51,7 +51,9 @@
         "/.*lint.*/",
         "/.*dockle.*/",
         "/.*trivy.*/",
-        "/.*anchore.*/"
+        "/.*anchore.*/",
+        "/.*scan.*/",
+        "/.*sarif.*/"
       ]
     }
   ]
