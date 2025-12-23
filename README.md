@@ -30,8 +30,8 @@ The following plugins have been added to this custom NetBox image:
 8. **[Netbox OTP Plugin](https://github.com/k1nky/netbox-otp-plugin)**
    Netbox plugin adds support for one-time password (OTP)
 
-9. **[Netbox LibreNMS Plugin](https://github.com/bonzo81/netbox-librenms-plugin)**
-   NetBox LibreNMS Plugin enables integration between NetBox and LibreNMS
+9. **[Netbox Change2Log Plugin](https://github.com/tmtde/netbox-change2log)**
+   Mirror NetBox change log to named logger
 
 ### Plugin Requirements
 
