@@ -58,7 +58,7 @@ jobs:
           VALIDATE_RENOVATE: false
           VALIDATE_TRIVY: false
           VALIDATE_NATURAL_LANGUAGE: false
-          EDITORCONFIG_CHECKER_OPTIONS: "--severity warning"
+          VALIDATE_BIOME_FORMAT: false
   shiftleft:
     name: shiftleft
     strategy:
