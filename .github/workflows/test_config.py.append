@@ -1,0 +1,7 @@
+PLUGINS.append("netbox_qrcode")
+PLUGINS.append("netbox_topology_views")
+PLUGINS.append("netbox_inventory")
+PLUGINS.append("netbox_floorplan")
+PLUGINS.append("netbox_documents")
+PLUGINS.append("netbox_lifecycle")
+PLUGINS.append("netbox_otp_plugin")
