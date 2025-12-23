@@ -20,7 +20,7 @@ RUN apt-get -q update; apt-get -qy upgrade && \
   /usr/local/bin/uv pip install -r /opt/netbox/plugin_requirements.txt && \
   # Activate plugins
   cat /etc/netbox/config/plugins.py && \
-  echo 'PLUGINS = ["netbox_qrcode","netbox_topology_views","netbox_inventory","netbox_floorplan","netbox_documents","netbox_lifecycle","netbox_otp_plugin"]' >> /etc/netbox/config/plugins.py && \
+  echo 'PLUGINS = ["netbox_qrcode","netbox_topology_views","netbox_inventory","netbox_floorplan","netbox_documents","netbox_lifecycle","netbox_otp_plugin","netbox_change2log"]' >> /etc/netbox/config/plugins.py && \
   # Install static files from our plugins
   DEBUG="true" SECRET_KEY="dummyKeyWithMinimumLength-------------------------" /opt/netbox/venv/bin/python /opt/netbox/netbox/manage.py collectstatic --no-input && \
   # Cleanup
