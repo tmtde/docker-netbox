@@ -163,11 +163,6 @@ jobs:
       - name: Download netbox-docker test scripts
         run: |
           git clone https://github.com/netbox-community/netbox-docker.git /tmp/netbox-docker
-      - name: Checkout
-        uses: actions/checkout@v6
-      - name: Append our test config
-        run: |
-          cat .github/workflows/test_config.py.append >> /tmp/netbox-docker/test-configuration/test_config.py
       - name: Test the Docker image for static files
         run: |
           CONTAINER_OUTPUT="$(docker run --rm -t localhost:5000/foobar/${{ env.IMAGE_NAME }} ls -1 /opt/netbox/netbox/static/netbox_floorplan/ | wc -l)"
