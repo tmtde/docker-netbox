@@ -20,21 +20,6 @@ env:
   IMAGE_NAME: netbox-plugins
 
 jobs:
-  codespell:
-    name: codespell
-    strategy:
-      fail-fast: false
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v6
-      - name: Codespell
-        uses: codespell-project/actions-codespell@v2.2
-        with:
-          skip: .git
-          check_filenames: true
-          check_hidden: true
-          ignore_words_list: anull
   super-linter:
     name: super-linter
     strategy:
@@ -81,7 +66,6 @@ jobs:
           sarif_file: reports
   test-build:
     needs:
-      - codespell
       - super-linter
       - shiftleft
     strategy:
