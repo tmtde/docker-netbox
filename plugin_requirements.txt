@@ -1,7 +1,7 @@
 django-auth-ldap==5.2.0
 netbox-qrcode==0.0.19
 netbox-topology-views==4.4.0
-netbox-inventory==2.4.1
+netbox-inventory==2.5.0
 netbox-floorplan-plugin==0.8.0
 netbox-documents==0.7.4
 netbox-lifecycle==1.1.6
