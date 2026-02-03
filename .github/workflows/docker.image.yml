@@ -9,6 +9,7 @@ on:
       - $default-branch
       - development
       - master
+      - 4.*
     tags:
       - "*.*.*-*"
   # Run tests for any PRs
@@ -146,7 +147,7 @@ jobs:
       # See https://github.com/netbox-community/netbox-docker/blob/0c99ff8b5663db3e0db5a45660cebda9f917508b/.github/workflows/release.yml#L47
       - name: Download netbox-docker test scripts
         run: |
-          git clone https://github.com/netbox-community/netbox-docker.git /tmp/netbox-docker
+          git clone --branch 3.4.2 --depth 1 https://github.com/netbox-community/netbox-docker.git /tmp/netbox-docker
       - name: Test the Docker image for static files
         run: |
           CONTAINER_OUTPUT="$(docker run --rm -t localhost:5000/foobar/${{ env.IMAGE_NAME }} ls -1 /opt/netbox/netbox/static/netbox_floorplan/ | wc -l)"
