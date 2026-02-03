@@ -9,6 +9,7 @@ on:
       - $default-branch
       - development
       - master
+      - 4.*
     tags:
       - "*.*.*-*"
   # Run tests for any PRs
