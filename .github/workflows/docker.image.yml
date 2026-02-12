@@ -34,7 +34,7 @@ jobs:
           # list of files that changed across commits
           fetch-depth: 0
       - name: Lint Code Base
-        uses: super-linter/super-linter@v8.4.0
+        uses: super-linter/super-linter@v8.5.0
         env:
           DEFAULT_BRANCH: master
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -256,7 +256,7 @@ jobs:
           docker image ls -a
           docker push localhost:5000/foobar/${{ env.IMAGE_NAME }}
       - name: Run the Anchore scan action itself with GitHub Advanced Security code scanning integration enabled
-        uses: anchore/scan-action@v7.3.1
+        uses: anchore/scan-action@v7.3.2
         with:
           image: localhost:5000/foobar/${{ env.IMAGE_NAME }}
           acs-report-enable: true
