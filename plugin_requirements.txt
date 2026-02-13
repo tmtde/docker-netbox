@@ -3,7 +3,7 @@ netbox-qrcode==0.0.19
 netbox-topology-views==4.4.0
 netbox-inventory==2.4.1
 netbox-floorplan-plugin==0.8.0
-netbox-documents==0.8.1
+netbox-documents==0.8.2
 netbox-lifecycle==1.1.6
 netbox-otp-plugin==1.3.4
 netbox-change2log @ git+https://github.com/tmtde/netbox-change2log.git@0.1.0
